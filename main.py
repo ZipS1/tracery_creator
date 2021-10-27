@@ -1,4 +1,4 @@
-import pygame
+import pygame as pg
 
 
 class ConsoleUI:
@@ -6,11 +6,17 @@ class ConsoleUI:
         pass
 
     def input_size(self):
-        pass
+        print("Input size of tracery (x y): ", end="")
+        tracery_size = map(int, input().split())
+
+        # add match construction here to check input
+
+        window = Window(tracery_size)
+        window.mainloop()
 
 
 class Window:
-    def __init__(self):
+    def __init__(self, size_in_cells):
         pass
 
     def mainloop(self):
@@ -49,7 +55,8 @@ class Cell:
 
 
 def main():
-    pass
+    console_ui = ConsoleUI()
+    console_ui.input_size()
 
 
 if __name__ == '__main__':
