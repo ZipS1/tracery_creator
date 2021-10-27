@@ -6,13 +6,30 @@ class ConsoleUI:
         pass
 
     def input_size(self):
-        print("Input size of tracery (x y): ", end="")
-        tracery_size = map(int, input().split())
+        is_valid = 0
+        while is_valid == 0:
+            print("\nInput size of tracery (x y): ", end="")
+            inputted_size = input()
 
-        # add match construction here to check input
+            is_valid = self._check_inputted_size(inputted_size)
 
-        window = Window(tracery_size)
+        window = Window(inputted_size)
         window.mainloop()
+
+    def _check_inputted_size(self, user_input):
+        is_valid = 0
+        user_input = user_input.split()
+
+        match user_input:
+            case x, y:
+                if x.isdigit() and y.isdigit():
+                    is_valid = 1
+                else:
+                    print("Incorrect input!")
+            case _:
+                print("Incorrect input!")
+
+        return is_valid
 
 
 class Window:
@@ -20,18 +37,18 @@ class Window:
         pass
 
     def mainloop(self):
+        print("mainloop called...")
+
+    def _draw_grid(self):
         pass
 
-    def draw_grid(self):
+    def _draw_cell(self):
         pass
 
-    def draw_cell(self):
+    def _handle_click(self):
         pass
 
-    def handle_click(self):
-        pass
-
-    def save_picture(self):
+    def _save_picture(self):
         pass
 
 
@@ -39,10 +56,10 @@ class Grid:
     def __init__(self):
         pass
 
-    def draw_layout(self):
+    def _draw_layout(self):
         pass
 
-    def draw_line(self):
+    def _draw_line(self):
         pass
 
 
@@ -50,7 +67,7 @@ class Cell:
     def __init__(self):
         pass
 
-    def change_state(self):
+    def _change_state(self):
         pass
 
 
