@@ -1,6 +1,11 @@
 import pygame as pg
 
 
+CELL_SIZE = 50                      # size of cell in pixels
+GRID_WIDTH = 5                      # grid width in pixels
+WINDOW_TITLE = "Tracery Creator"
+
+
 class ConsoleUI:
     def __init__(self):
         pass
@@ -13,7 +18,8 @@ class ConsoleUI:
 
             is_valid = self._check_inputted_size(inputted_size)
 
-        window = Window(inputted_size)
+        field_size = list(map(int, inputted_size.split()))
+        window = Window(field_size)
         window.mainloop()
 
     def _check_inputted_size(self, user_input):
@@ -33,8 +39,9 @@ class ConsoleUI:
 
 
 class Window:
-    def __init__(self, size_in_cells):
-        pass
+    def __init__(self, field_size):
+        self.screen = pg.display.set_mode(field_size)
+        pg.display.set_caption(WINDOW_TITLE)
 
     def mainloop(self):
         print("mainloop called...")
@@ -72,8 +79,12 @@ class Cell:
 
 
 def main():
+    pg.init()
+
     console_ui = ConsoleUI()
     console_ui.input_size()
+
+    pg.quit()
 
 
 if __name__ == '__main__':
