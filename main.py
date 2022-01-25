@@ -1,49 +1,25 @@
 import pygame as pg
 
 
-CELL_SIZE = 50                      # size of cell in pixels
-GRID_WIDTH = 5                      # grid width in pixels
 WINDOW_TITLE = "Tracery Creator"
+WINDOW_RESOLUTION = (800, 600)
 
 
-class ConsoleUI:
+class App:
     def __init__(self):
         pass
 
-    def input_size(self):
-        is_valid = 0
-        while is_valid == 0:
-            print("\nInput size of tracery (x y): ", end="")
-            inputted_size = input()
-
-            is_valid = self._check_inputted_size(inputted_size)
-
-        field_size = list(map(int, inputted_size.split()))
-        window = Window(field_size)
-        window.mainloop()
-
-    def _check_inputted_size(self, user_input):
-        is_valid = 0
-        user_input = user_input.split()
-
-        match user_input:
-            case x, y:
-                if x.isdigit() and y.isdigit():
-                    is_valid = 1
-                else:
-                    print("Incorrect input!")
-            case _:
-                print("Incorrect input!")
-
-        return is_valid
+    def run(self):
+        window = Window(WINDOW_RESOLUTION)
+        window.loop()
 
 
 class Window:
-    def __init__(self, field_size):
-        self.screen = pg.display.set_mode(field_size)
+    def __init__(self, resolution):
+        self.screen = pg.display.set_mode(resolution)
         pg.display.set_caption(WINDOW_TITLE)
 
-    def mainloop(self):
+    def loop(self):
         print("mainloop called...")
 
     def _draw_grid(self):
@@ -81,8 +57,8 @@ class Cell:
 def main():
     pg.init()
 
-    console_ui = ConsoleUI()
-    console_ui.input_size()
+    app = App()
+    app.run()
 
     pg.quit()
 
