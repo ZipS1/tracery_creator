@@ -6,7 +6,7 @@ authors = ["ZipS1 <czwetkow.serega@yandex.ru>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pygame = "^2.0.2"
+pygame = "^2.1.2"
 
 [tool.poetry.dev-dependencies]
 
