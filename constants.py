@@ -1,0 +1,14 @@
+WINDOW_TITLE = "Tracery Creator"
+WINDOW_RESOLUTION = (800, 600)
+PICTURE_SIZE = (10, 10)
+
+FPS = 60
+
+# cell states
+BLANK = 0
+UPSIDE_DIAGONAL = 1
+DOWNSIDE_DIAGONAL = 2
+
+# line states
+BLANK = 0
+FILLED = 1
