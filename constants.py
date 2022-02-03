@@ -14,3 +14,6 @@ VERTICAL_LINE = 4
 # line states
 BLANK = 0
 FILLED = 1
+
+# colors
+WHITE = (255, 255, 255)
