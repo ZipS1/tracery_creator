@@ -21,8 +21,5 @@ class Window:
         for y in range(0, height + 1, round(height/cells_in_height)):
             pg.draw.line(self.screen, BLANK_LINE_COLOR, (0, y), (width, y), width=3)
 
-    def _handle_click(self):
-        pass
-
-    def _save_picture(self):
+    def get_clicked_object(self):
         pass

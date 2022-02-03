@@ -4,15 +4,14 @@ PICTURE_SIZE = (10, 10)
 
 FPS = 60
 
-# cell states
 BLANK = 0
+# cell states
 UPSIDE_DIAGONAL = 1
 DOWNSIDE_DIAGONAL = 2
 HORIZONTAL_LINE = 3
 VERTICAL_LINE = 4
 
 # line states
-BLANK = 0
 FILLED = 1
 
 # colors
