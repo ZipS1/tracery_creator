@@ -14,7 +14,7 @@ class Window:
         self.screen = pg.display.set_mode(resolution)
         pg.display.set_caption(WINDOW_TITLE)
 
-        self.grid = Grid(picture_size)
+        self.grid = Grid(self.screen, picture_size)
 
     def loop(self):
         clock = pg.time.Clock()
@@ -33,8 +33,8 @@ class Window:
             pg.display.update()
 
     def _draw_grid(self):
-        self.grid.draw_background(self.screen)
-        self.grid.draw_lines(self.screen)
+        self.grid.draw_background()
+        self.grid.draw_lines()
 
     def _draw_cells(self):
         for cell in self.cells:
