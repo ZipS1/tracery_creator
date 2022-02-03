@@ -2,9 +2,7 @@ from constants import *
 
 
 class Line:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+    def __init__(self):
         self.state = BLANK
 
     def draw(self):

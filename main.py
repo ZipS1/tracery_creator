@@ -1,14 +1,15 @@
 import pygame as pg
-from window import Window
+from processor import Processor
 from constants import *
+
 
 class App:
     def __init__(self):
         pass
 
     def run(self):
-        window = Window(WINDOW_RESOLUTION, PICTURE_SIZE)
-        window.loop()
+        processor = Processor(WINDOW_RESOLUTION, PICTURE_SIZE)
+        processor.loop()
 
 
 def main():
