@@ -4,6 +4,10 @@ from constants import *
 
 
 class App:
+    """
+    Class which runs main loop and making preparatory procedures before
+    running this main loop
+    """
     def __init__(self):
         pass
 

@@ -3,6 +3,11 @@ from constants import *
 
 
 class Window:
+    """
+    Responsible for showing app window on the screen,
+    and preprocess clicks on the screen,
+    found out what object user clicked on
+    """
     def __init__(self, resolution, picture_size):
         self.resolution = resolution
         self.picture_size = picture_size
