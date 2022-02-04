@@ -4,6 +4,10 @@ PICTURE_SIZE = (10, 10)
 
 FPS = 60
 
+MARGIN_COEFFICIENT = 0.1 #coefficient of margin from width
+FILLED_LINE_WIDTH = 3
+
+
 BLANK = 0
 # cell states
 UPSIDE_DIAGONAL = 1
@@ -19,4 +23,4 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 LIGHT_GREY = (235, 235, 235)
 
-BLANK_LINE_COLOR = LIGHT_GREY
+BLANK_LINE_COLOR = BLACK

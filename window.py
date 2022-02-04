@@ -11,6 +11,8 @@ class Window:
     def __init__(self, resolution, picture_size):
         self.width, self.height = resolution
         self.cells_on_x, self.cells_on_y = picture_size
+        self.margin_x = MARGIN_COEFFICIENT * self.width
+        self.margin_y = MARGIN_COEFFICIENT * self.height
 
         self.screen = pg.display.set_mode(resolution)
         pg.display.set_caption(WINDOW_TITLE)
@@ -18,20 +20,15 @@ class Window:
     def draw(self, cells, lines):
         self._draw_background()
         self._draw_lines()
+        self._draw_cells()
 
     def _draw_background(self):
         self.screen.fill(WHITE)
 
     def _draw_lines(self):
-        for x in range(0, self.width + 1, round(self.width/self.cells_on_x)):
-            pg.draw.line(
-                self.screen, BLANK_LINE_COLOR,
-                (x, 0), (x, self.height), width=3)
-
-        for y in range(0, self.height + 1, round(self.height/self.cells_on_y)):
-            pg.draw.line(
-                self.screen, BLANK_LINE_COLOR,
-                (0, y), (self.width, y), width=3)
+        indent_x = round(self.margin_x + FILLED_LINE_WIDTH//2)
+        indent_y = round(self.margin_y + FILLED_LINE_WIDTH//2)
+        # TODO: make indents
 
     def _draw_cells(self):
         pass
